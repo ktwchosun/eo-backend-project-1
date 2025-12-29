@@ -1,0 +1,138 @@
+:root {
+    --main-bg: #fafafa;
+    --text-primary: #323232;
+    --text-secondary: #9a9a9a;
+
+    --input-bg: #fff;
+    --input-border: #bfbfbf;
+    --scroll-color: #ccc;
+
+    --tag-color: #646464;
+
+    --sidebar-bg: #222;
+
+    --sidebar-logo: #e0e0e0;
+
+    --sidebar-text-primary: #eee;
+    --sidebar-text-secondary: #9a9a9a;
+
+    --sidebar-hover: rgba(255, 255, 255, 0.1);
+
+    --menu-bg: #2a2a2a;
+    --menu-border: #9a9a9a;
+}
+
+:root.dark {
+    --main-bg: #181818;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a8a8a8;
+
+    --input-bg: #202020;
+    --input-border: #3c3c3c;
+    --scroll-color: #6a6a6a;
+
+    --tag-color: #b0b0b0;
+
+    --sidebar-bg: #1c1c1c;
+
+    --sidebar-logo: #dddddd;
+
+    --sidebar-text-primary: #e3e3e3;
+    --sidebar-text-secondary: #9f9f9f;
+
+    --sidebar-hover: rgba(255, 255, 255, 0.06);
+
+    --menu-bg: #242424;
+    --menu-border: #4a4a4a;
+}
+
+body {
+    background: var(--main-bg);
+    color: var(--text-primary);
+    font: .96rem sans-serif;
+    user-select: none;
+}
+
+.icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px; height: 32px;
+    
+    border-radius: 8px;
+}
+
+.icon > svg { width: 18px; height: 18px; }
+
+input, button, textarea, a {
+    padding: 0; margin: 0;
+    background: none; border: none;
+    color: inherit; font: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
+button, a { cursor: pointer; }
+
+#wrapper {
+    display: flex;
+    width: 100vw; height: 100vh;
+}
+
+#popup-blocker {
+    display: none;
+    position: fixed;
+    width: 100vw; height: 100vh;
+    z-index: 999;
+}
+
+#popup-blocker.active { display: block; }
+
+.popup-menu-wrapper { position: relative; }
+
+.popup-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    
+    position: absolute;
+    bottom: 44px;
+
+    padding: 6px;
+    box-sizing: border-box;
+
+    background-color: var(--menu-bg);
+    border: 1px solid var(--menu-border);
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+    transition: 80ms ease;
+
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.popup-menu.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popup-menu > a {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    font: 300 .8rem / 24px sans-serif;
+}
+
+.popup-menu > a > .icon { width: 24px; height: 24px; }
+
+.popup-menu > a > .label { padding: 0 12px 0 8px; }
+
+.popup-menu > hr {
+    width: 100%; height: 1px;
+    margin: 4px 0;
+    background-color: #9a9a9a;
+    border: none;
+}
