@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>접속사 | 회원 가입</title>
+
+    <script src="../js/init.js"></script>
+    
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/form.css">
+
+    <script src="../js/signin.js" defer></script>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div id="float">
+            <div class="title">
+                <h1 class="logo">
+                    <a href="../index.html" class="logo">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7.1,19.7h1.3c0.3,0,0.6-0.2,0.8-0.5l0.6-1.9C9.1,18.2,8.2,19.1,7.1,19.7z" />
+                                <path d="M22.6,9.4v9.7c0,0.4-0.3,0.7-0.7,0.7h-4.6c-0.3,0-0.6-0.2-0.7-0.5l-0.7-2c-0.2-0.6-0.8-1-1.4-1h-4
+                                    c0.3-0.5,0.6-0.9,0.8-1.4c0.3-0.7,1-1.1,1.8-1.1l1.6,0l-1.9-5.6l-0.5,1.4c0-1.6-0.6-3.1-1.5-4.3l0-0.1h3.4c0.4,0,0.7,0.2,0.8,0.5
+                                    l4.4,12.1v-5.1C19.5,11,20.8,9.5,22.6,9.4L22.6,9.4z" />
+                                <path d="M22.7,5.2c-0.2-0.3-0.4-0.5-0.7-0.7c-0.3-0.2-0.6-0.3-1-0.3c-0.3,0-0.7,0.1-1,0.3c-0.3,0.2-0.5,0.4-0.7,0.7
+                                    c-0.2,0.3-0.3,0.6-0.3,1c0,0.3,0.1,0.7,0.3,0.9c0.2,0.3,0.4,0.5,0.7,0.7c0.3,0.2,0.6,0.3,1,0.3c0.4,0,0.7-0.1,1-0.3
+                                    c0.3-0.2,0.6-0.4,0.7-0.7C22.9,6.8,23,6.5,23,6.2C23,5.8,22.9,5.5,22.7,5.2z" />
+                                <path d="M10.3,9.5c0,4.6-2.3,8.1-6.7,9.7c-0.6,0.2-1.1-0.5-0.6-0.9c2.7-2.8,2.7-4.1,2.7-4.1C3.1,14.1,1,12,1,9.5
+                                    c0-2.6,2.1-4.6,4.6-4.6S10.3,6.9,10.3,9.5z" />
+                            </svg>
+                        </span>
+
+                        <span class="lettering">접속사</span>
+                    </a>
+                </h1>
+                <p class="desc">계정이 없으시다면 회원가입을 진행해 주세요.</p>
+            </div>
+
+            <form novalidate>
+                <p><input type="email" id="email" name="email" class="text" placeholder="이메일" autocomplete="off"></p>
+                <p><input type="password" id="password" name="password" class="text" placeholder="비밀번호"></p>
+                <p><input type="password" id="password-check" name="password-check" class="text" placeholder="비밀번호 확인"></p>
+                <p>
+                    <input type="text" id="code" name="code" class="text code" placeholder="코드" autocomplete="off">
+                    <button type="button" id="code-btn" class="button card small code">코드 전송</button>
+                </p>
+
+                <p class="desc">가입하면 접속사의 <a href="#link1">이용약관</a> 및 <a href="#link2">개인정보처리방침</a>에 동의하는 것으로 간주됩니다.</p>
+
+                <p><button type="submit" class="button card">회원가입</button></p>
+                <p class="link"><a href="./login.html">로그인</a></p>
+            </form> 
+        </div>
+    </div>
+
+</body>
+</html>

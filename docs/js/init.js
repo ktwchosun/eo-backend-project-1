@@ -1,0 +1,2 @@
+if (localStorage.getItem("theme") === "dark") document.documentElement.classList.add("dark");
+if (localStorage.getItem("sidebarCollapse") === "0") document.documentElement.classList.remove("sidebar-collapse");

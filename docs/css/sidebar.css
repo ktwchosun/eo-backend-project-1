@@ -1,0 +1,231 @@
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 17rem; padding: 8px;
+    box-sizing: border-box;
+
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid #aaa;
+
+    font: 300 .88rem / 1 sans-serif;
+    color: var(--sidebar-text-primary);
+
+    white-space: nowrap;
+}
+
+/* Sidebar Header */
+#sidebar > .header,
+#sidebar > .header > .logo {
+    display: flex;
+    align-items: center;
+}
+
+#sidebar > .header {
+    justify-content: space-between;
+    min-height: 36px;
+    padding: 12px 0;
+}
+
+#sidebar >.header > .logo {
+    gap: 12px;
+    color: var(--sidebar-logo);
+}
+
+#sidebar > .header > .logo > .icon,
+#sidebar > .header > .logo > .icon > svg { width: 36px; height: 36px; }
+
+#sidebar > .header > .logo > .lettering { font: bold 1.2rem / 1 sans-serif; }
+
+#sidebar-collapse:hover { background-color: var(--sidebar-hover); }
+#sidebar-collapse > svg { width: 18px; height: 18px; }
+
+/* Sidebar Nav */
+#sidebar > nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    margin-bottom: 24px;
+}
+
+#sidebar > nav > a {
+    display: block;
+    position: relative;
+}
+
+#sidebar > nav > a > .icon {
+    position: absolute;
+}
+
+#sidebar > nav > a > .label {
+    display: inline-block;
+    padding-left: 32px;
+    line-height: 32px;
+}
+
+/* Sidebar Folder */
+#sidebar > .folder {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 32px;
+}
+
+#sidebar > .bookmark { max-height: 224px; }
+
+#sidebar > .recent { flex-grow: 1; }
+
+/* Sidebar Folder Header */
+#sidebar > .folder > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: .82rem;
+    opacity: .72;
+}
+
+#sidebar > .folder > .header > .label { flex-grow: 1; }
+
+#sidebar > .folder > .header > button { padding: 0 12px; }
+
+/* Sidebar Folder Ul */
+#sidebar > .folder > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding-right: 2px;
+    margin-top: 4px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#sidebar > .folder > ul::-webkit-scrollbar { width: 2px; }
+#sidebar > .folder > ul::-webkit-scrollbar-thumb {
+    background-color: var(--sidebar-text-secondary);
+    border-radius: 1px;
+}
+
+#sidebar > .folder > ul.hide { display: none; }
+
+#sidebar > .folder > ul > li {
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+#sidebar > .folder > ul > li > a {
+    flex-grow: 1;
+    padding-left: 8px;
+    line-height: 32px;
+}
+
+#sidebar > .folder > ul > li > .icon {
+    background-color: var(--sidebar-hover);
+    opacity: 0;
+}
+#sidebar > .folder > ul > li > .icon:hover { opacity: 1; }
+
+/* Accounts */
+#account {
+    position: relative;
+    width: 100%;
+    margin-top: 24px;
+    text-align: left;
+}
+
+#account > .icon { position: absolute; }
+
+#account > .label {
+    padding-left: 32px;
+    line-height: 32px;
+}
+
+/* Sidebar Hover Effect */
+#sidebar > nav > a,
+#sidebar > .folder > ul > li,
+#account {
+    border-radius: 8px;
+    transition: 30ms ease;
+}
+
+#sidebar > nav > a:hover,
+#sidebar > .folder > ul > li.highlight,
+.popup-menu > a:hover,
+#account:hover {
+    background-color: var(--sidebar-hover);
+}
+
+/* Sidebar Collapse */
+:root.sidebar-collapse #sidebar {
+    width: 48px;
+}
+
+:root.sidebar-collapse #sidebar > .header > .logo,
+:root.sidebar-collapse #sidebar > nav > a > .label,
+:root.sidebar-collapse #sidebar > .popup-menu-wrapper > #account > .label {
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+:root.sidebar-collapse #sidebar > .folder {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#sidebar,
+#sidebar > .header > .logo,
+#sidebar > nav > a > .label,
+#sidebar > .folder,
+#sidebar > .popup-menu-wrapper > #account > .label {
+    transition: 240ms ease;
+}
+
+/* Sidebar Collapse Hover NameTag */
+#sidebar-collapse,
+#account {
+    position: relative;
+}
+
+#sidebar-collapse::after,
+#new::after,
+#history::after,
+#account::after {
+    display: inline-block;
+    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    left: 44px;
+
+    padding: 6px 8px;
+    
+    background-color: var(--sidebar-bg);
+    border-radius: 6px;
+
+    font: 300 .82rem / 1 sans-serif;
+
+    opacity: 0;
+    transition: 60ms ease;
+
+    pointer-events: none;
+}
+
+#sidebar-collapse::after { content: "사이드바 접기"; }
+#new::after { content: "새 채팅"; }
+#history::after { content: "채팅 내역"; }
+#account::after { content: "시작하기"; }
+
+#sidebar-collapse:hover::after,
+#sidebar.collapse #new:hover::after,
+#sidebar.collapse #history:hover::after,
+#sidebar.collapse #account:hover::after {
+    opacity: 1;
+    transition: 60ms ease 400ms;
+}
