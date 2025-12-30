@@ -10,10 +10,10 @@ const form = document.querySelector("#float > form");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const passwordCheck = document.getElementById("password-check");
-const code = document.getElementById("code");
+const codeIn = document.getElementById("code");
 const codeBtn = document.getElementById("code-btn");
 
-let CODE;
+let code;
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -33,7 +33,7 @@ form.addEventListener("submit", function (e) {
         return;
     }
 
-    if (!validateCode(code.value)) {
+    if (!validateCode(codeIn.value)) {
         alert(invalidText.code);
         return;
     }
@@ -41,6 +41,7 @@ form.addEventListener("submit", function (e) {
     localStorage.setItem("email", email.value);
     localStorage.setItem("password", password.value);
 
+    alert("회원 가입이 되었습니다!");
     location.href = "./login.html";
 });
 
@@ -56,7 +57,7 @@ function validatePassword (text) {
 
 function validatePasswordCheck (text) { return text == password.value; }
 
-function validateCode (text) { return text == CODE; }
+function validateCode (text) { return text == code; }
 
 codeBtn.addEventListener("click", function () {
     if (!validateEmail (email.value)) {
@@ -74,9 +75,9 @@ codeBtn.addEventListener("click", function () {
         return;
     }
 
-    CODE = Math.floor(Math.random() * 1000000)
+    code = Math.floor(Math.random() * 1000000)
         .toString()
         .padStart(6, "0");
 
-    alert(CODE);
+    alert(code);
 });

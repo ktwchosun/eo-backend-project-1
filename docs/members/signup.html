@@ -2,15 +2,15 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>접속사 | 비밀번호 찾기</title>
+    <title>접속사 | 회원 가입</title>
 
     <script src="../js/init.js"></script>
-
+    
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/all.css">
     <link rel="stylesheet" href="../css/form.css">
 
+    <script src="../js/signup.js" defer></script>
 </head>
 <body>
 
@@ -36,24 +36,23 @@
                         <span class="lettering">접속사</span>
                     </a>
                 </h1>
-                <p class="desc">비밀번호를 잊어버리셨나요?</p>
+                <p class="desc">계정이 없으시다면 회원가입을 진행해 주세요.</p>
             </div>
 
-            <form>
-                <h2>비밀번호 찾기</h2>
-                <p class="desc">이메일로 발송된 인증코드를 입력하여 계정 인증을 해주세요.</p>
-
+            <form novalidate>
                 <p><input type="email" id="email" name="email" class="text" placeholder="이메일" autocomplete="off"></p>
+                <p><input type="password" id="password" name="password" class="text" placeholder="비밀번호"></p>
+                <p><input type="password" id="password-check" name="password-check" class="text" placeholder="비밀번호 확인"></p>
                 <p>
                     <input type="text" id="code" name="code" class="text code" placeholder="코드" autocomplete="off">
-                    <button type="button" class="button card small code">코드 전송</button>
+                    <button type="button" id="code-btn" class="button card small code">코드 전송</button>
                 </p>
 
-                <p></p>
+                <p class="desc">가입하면 접속사의 <a href="#link1">이용약관</a> 및 <a href="#link2">개인정보처리방침</a>에 동의하는 것으로 간주됩니다.</p>
 
-                <p><button type="submit" class="button card continue">계속</button></p>
-                <p class="link"><a href="./login.html">로그인으로 돌아가기</a></p>
-            </form>
+                <p><button type="submit" class="button card">회원가입</button></p>
+                <p class="link"><a href="./login.html">로그인</a></p>
+            </form> 
         </div>
     </div>
 

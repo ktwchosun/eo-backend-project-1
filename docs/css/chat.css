@@ -1,0 +1,169 @@
+#content {
+    flex-grow: 1;
+    position: relative;
+}
+
+#content > .box {
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+
+    width: 80%;
+    max-width: 760px;
+    margin: 0 auto;
+
+    background-color: var(--main-bg);
+
+    overflow: hidden;
+}
+
+#content > .box > .input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+#content > .box > .input-box > .input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 24px;
+    
+    box-shadow: 1px 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Textarea */
+#prompt {
+    height: 48px; max-height: 304px;
+    box-sizing: border-box;
+
+    margin: 8px 0 8px 8px; padding: 0 4px 0 0;
+
+    background: none;
+    border: none; outline: none;
+
+    font: 300 .96rem / 24px sans-serif;
+
+    resize: none;
+    overflow-y: scroll;
+}
+
+#prompt::selection {
+    background-color: var(--text-primary);
+    color: var(--input-bg);
+}
+
+#prompt::-webkit-scrollbar,
+#content > .chat-box::-webkit-scrollbar { width: 4px; }
+
+#prompt::-webkit-scrollbar-thumb,
+#content > .chat-box::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color);
+    border-radius: 2px;
+}
+
+/* Tool Tags */
+#content > .box > .input-box > .input > .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 32px;
+}
+
+#content > .box > .input-box > .input > .bottom > .tags {
+    display: flex;
+    gap: 6px;
+    color: var(--tag-color);
+}
+
+#content > .box > .input-box > .input > .bottom > .tags > button {
+    width: 32px; height: 32px;
+
+    border: 1px solid var(--text-secondary);
+    border-radius: 50%;
+}
+
+#content > .box > .input-box > .input > .bottom > .tags > button > svg { width: 20px; height: 20px; }
+
+#content > .box > .input-box > .input > .bottom > .send {
+    width: 32px; height: 32px;
+    background-color: var(--text-primary);
+    border-radius: 50%;
+    color: var(--input-bg);
+    opacity: .6;
+}
+
+#content > .box > .input-box > .input > .bottom > .send.on {
+    opacity: 1;
+}
+
+#content > .box > .notice {
+    color: var(--text-secondary);
+    font: 300 .8rem / 36px sans-serif;
+    text-align: center;
+}
+
+/* Header */
+#header {
+    position: absolute;
+    top: 0; left: 0;
+
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+
+    color: var(--tag-color);
+    font: bold 1rem / 64px sans-serif;
+}
+
+/* Chats */
+#content > .chat-box {
+    height: calc(100% - 64px);
+    margin: 64px 8px 0;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+#chats {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    width: 80%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+#chats > li {
+    display: inline-block;
+
+    max-width: 88%;
+    padding: 8px 16px;
+
+    font: 300 .92rem / 24px sans-serif;
+    
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+#chats > li.user {
+    margin-left: auto;
+    margin-right: 16px;
+
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 16px 2px 16px 16px;
+}
+
+#chats > li.assistant {
+    margin-right: auto;
+}

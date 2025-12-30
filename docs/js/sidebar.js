@@ -14,12 +14,7 @@ folders.forEach(function (folder) {
     });
 });
 
-let chatList = [
-  { id: 1, name: "도비는 자유", bookmark: true },
-  { id: 2, name: "도비는 무료", bookmark: true },
-  { id: 3, name: "모델 응답 속도", bookmark: false },
-  { id: 4, name: "프롬프트 저장", bookmark: false }
-];
+let chatList = [];
 
 const bookmarkUl = document.getElementById("bookmark");
 const recentUl = document.getElementById("recent");
@@ -32,7 +27,7 @@ function renderList () {
         const li = document.createElement("li");
 
         const a = document.createElement("a");
-        a.href = "#" + chat.id;
+        a.href = `./chat.html?id=${encodeURIComponent(chat.id)}`;
         a.classList.add("label");
         a.innerText = chat.name;
 
@@ -89,8 +84,6 @@ popupBlocker.addEventListener("click", function () {
 
 // DOM Loaded
 document.addEventListener("DOMContentLoaded", function () {
-    renderList();
-
     if (localStorage.getItem("login") === "1") {
         account.querySelector(".label").innerText = localStorage.getItem("email");
 
@@ -131,8 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
         logout.href = "./index.html";
         logout.innerHTML = `<span class="label">로그아웃</span>`;
 
-        logout.addEventListener("click", function (e) {
+        logout.addEventListener("click", function () {
             localStorage.setItem("login", "0");
+            localStorage.removeItem("chatList");
         });
 
         accountMenu.appendChild(logout);

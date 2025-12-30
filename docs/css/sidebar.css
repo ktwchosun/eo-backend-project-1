@@ -7,7 +7,7 @@
     box-sizing: border-box;
 
     background-color: var(--sidebar-bg);
-    border-right: 1px solid #aaa;
+    border-right: 1px solid #646464;
 
     font: 300 .88rem / 1 sans-serif;
     color: var(--sidebar-text-primary);
@@ -223,9 +223,9 @@
 #account::after { content: "시작하기"; }
 
 #sidebar-collapse:hover::after,
-#sidebar.collapse #new:hover::after,
-#sidebar.collapse #history:hover::after,
-#sidebar.collapse #account:hover::after {
+:root.sidebar-collapse #sidebar #new:hover::after,
+:root.sidebar-collapse #sidebar #history:hover::after,
+:root.sidebar-collapse #sidebar #account:hover::after {
     opacity: 1;
     transition: 60ms ease 400ms;
 }
