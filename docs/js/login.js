@@ -49,6 +49,7 @@ form.addEventListener("submit", function (e) {
     localStorage.setItem("login", "1");
     localStorage.setItem("keep", keepBtn.cheacked ? "1" : "0");
 
+    alert("로그인이 되었습니다!");
     location.href = "../index.html";
 });
 

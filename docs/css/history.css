@@ -1,0 +1,103 @@
+#content {
+    flex-grow: 1;
+    position: relative;
+}
+
+#content > .box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 80%; height: 100%;
+    max-width: 760px;
+    padding: 120px 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#content > .box > h1 {
+    margin: 0 16px 12px;
+    font: bolder 1.8rem / 1 sans-serif;
+}
+
+#search {
+    padding: 8px 12px;
+
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+
+    font: 300 .88rem / 24px sans-serif;
+}
+
+#search::selection {
+    background-color: var(--text-primary);
+    color: var(--input-bg);
+}
+
+#content > .box > .buttons {
+    display: flex;
+    gap: 8px;
+
+    margin: 0 16px;
+}
+
+#content > .box > .buttons > button {
+    height: 32px;
+    padding: 0 12px;
+
+    border: 1px solid var(--text-secondary);
+    border-radius: 20px;
+
+    font: .88rem / 1 sans-serif;
+}
+
+#content > .box > .buttons > button.focus {
+    background-color: var(--text-primary);
+    color: var(--main-bg);
+}
+
+#list {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% - 8px);
+    padding-right: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+    color: var(--text-secondary);
+
+    overflow-y: scroll;
+}
+
+#list::-webkit-scrollbar { width: 4px; }
+
+#list::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color);
+    border-radius: 2px;
+}
+
+#list > li {
+    height: 40px;
+    border-bottom: 1px solid var(--input-border);
+    font: .92rem / 40px sans-serif;
+}
+
+#list > li:first-child { border-top: 1px solid var(--input-border); }
+
+#list > li:not(.notfound):hover { color: var(--text-primary); }
+
+#list > li > a {
+    display: inline-block;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+#list > li.notfound {
+    border: none;
+    text-align: center;
+}
